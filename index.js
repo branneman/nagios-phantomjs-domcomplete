@@ -31,7 +31,7 @@ var command =
     argv.url + ' ' +                                           // URL
     '--reporter=json';                                         // Output JSON
 
-exec(command, function(err, stdout, stderr) {
+exec(command, {maxBuffer: 1e7}, function(err, stdout, stderr) {
 
     if (err) {
         console.log('UNKNOWN: Phantomas returned an error:', err, stderr);
