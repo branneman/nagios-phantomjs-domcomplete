@@ -1,0 +1,23 @@
+{
+  "name": "nagios-phantomjs-domcomplete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/branneman/nagios-phantomjs-domcomplete.git"
+  },
+  "author": "Bran van der Meer <branmovic@gmail.com> (http://bran.name/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/branneman/nagios-phantomjs-domcomplete/issues"
+  },
+  "homepage": "https://github.com/branneman/nagios-phantomjs-domcomplete",
+  "dependencies": {
+    "minimist": "^1.1.0",
+    "phantomas": "^1.7.0"
+  }
+}
