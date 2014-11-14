@@ -7,7 +7,8 @@
  *
  * How to run:
  *  node index.js --url=http://google.com/
- *  node index.js --url=http://google.com/ --timeout-warning=3000 --timeout-critical=10000
+ *  node index.js --url=http://google.com/ -w 3000 -c 10000
+ *  node index.js --url=http://google.com/ --warning=3000 --critical=10000
  */
 
 // Dependencies
@@ -21,8 +22,8 @@ if (!argv.url) {
 
 // Timeouts
 var timeouts = {
-    warning: parseInt(argv['timeout-warning'], 10) || 1e4,
-    critical: parseInt(argv['timeout-critical'], 10) || 3e4
+    warning: parseInt(argv.w, 10) || parseInt(argv.warning, 10) || 1e4,
+    critical: parseInt(argv.c, 10) || parseInt(argv.critical, 10) || 3e4
 };
 
 var command =
@@ -41,7 +42,6 @@ exec(command, {maxBuffer: 1e7}, function(err, stdout, stderr) {
     try {
         var domComplete = JSON.parse(stdout).metrics.domComplete;
     } catch (e) {
-        console.log(stdout);
         console.log('UNKNOWN: Could not parse JSON');
         process.exit(3);
     }
@@ -57,5 +57,6 @@ exec(command, {maxBuffer: 1e7}, function(err, stdout, stderr) {
     }
 
     console.log('OK: domComplete event took', domComplete);
+    //console.log(stdout);
     process.exit(0);
 });
