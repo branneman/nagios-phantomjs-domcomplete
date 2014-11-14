@@ -17,3 +17,9 @@
 `node index.js --url=http://google.com/ -w 3000 -c 10000`
 
 `node index.js --url=http://google.com/ --warning=3000 --critical=10000`
+
+## Exit codes
+- `0` if Ok
+- `1` if domComplete exceeds warning level
+- `2` if domComplete exceeds critical level
+- `3` if unknown error
